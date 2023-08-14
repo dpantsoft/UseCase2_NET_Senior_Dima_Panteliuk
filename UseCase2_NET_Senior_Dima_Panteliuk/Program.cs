@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 StripeConfiguration.ApiKey = builder.Configuration.GetValue<string>("StripeSettings:SecretKey");
 
 builder.Services.AddScoped<BalanceService>();
+builder.Services.AddScoped<BalanceTransactionService>();
 
 var app = builder.Build();
 
