@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCase2_NET_Senior_Dima_Pa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCase2_NET_Senior_Dima_Panteliuk_Tests", "UseCase2_NET_Senior_Dima_Panteliuk_Tests\UseCase2_NET_Senior_Dima_Panteliuk_Tests.csproj", "{6796DD15-F7BA-48D9-8AB3-6A4B7EE5A640}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{90ACBCB8-81C9-4B6A-99B6-0A5A1CB4632E}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
