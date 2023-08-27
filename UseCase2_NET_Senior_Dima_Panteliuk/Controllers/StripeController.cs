@@ -17,6 +17,10 @@ namespace UseCase2_NET_Senior_Dima_Panteliuk.Controllers
             _balanceTransactionService = balanceTransactionService;
         }
 
+        /// <summary>
+        /// Get user's balance
+        /// </summary>
+        /// <returns>Balance</returns>
         [HttpGet("balance")]
         public async Task<IActionResult> GetBalanceAsync()
         {
@@ -32,12 +36,24 @@ namespace UseCase2_NET_Senior_Dima_Panteliuk.Controllers
             }
         }
 
+        /// <summary>
+        /// Get transactions with pagination.
+        /// </summary>
+        /// <param name="pageSize">The number of items per page.</param>
+        /// <param name="lastItemKey">The key of the last item on the previous page.</param>
+        /// <returns>List of transactions.</returns>
         [HttpGet("transactions")]
-        public async Task<IActionResult> GetBalanceTransactionsAsync()
+        public async Task<IActionResult> GetBalanceTransactionsAsync(int? pageSize, string? lastItemKey)
         {
             try
             {
-                var transactions = await _balanceTransactionService.ListAsync();
+                var options = new BalanceTransactionListOptions
+                {
+                    Limit = pageSize,
+                    StartingAfter = lastItemKey
+                };
+
+                var transactions = await _balanceTransactionService.ListAsync(options);
                 return Ok(transactions.Data);
             }
             catch (StripeException ex)
